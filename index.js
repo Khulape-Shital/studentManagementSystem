@@ -23,8 +23,12 @@ mongoose.connect(process.env.MONGO_URI, {
     .then(console.log("Connected to MongoDB"))
     .catch((err) => console.log("NOT CONNECTED TO NETWORK", err))
 
+
 app.use('/', Routes);
 
+app.get('/', (req, res) => {
+  res.send('Student Management System Backend is Running!');
+});
 app.listen(PORT, () => {
     console.log(`Server started at port no. ${PORT}`)
 })
